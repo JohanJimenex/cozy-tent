@@ -109,6 +109,12 @@ p{margin:12px 0}
 .rejilla li:hover{border-color:var(--ambar);transform:translateY(-3px)}
 .rejilla li b{color:var(--ambar-claro);font-weight:600}
 
+/* Tres textos en fila; en pantallas estrechas se apilan solos. */
+.tres{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:start}
+.tres .panel{padding:22px 22px;margin:0}
+.tres .panel h2{font-size:21px}
+.tres .panel p{font-size:15.5px;line-height:1.62}
+
 /* ---------------------------------------------------------------- galería */
 .galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
 .toma{margin:0;position:relative;border:1px solid #33271f;border-radius:10px;overflow:hidden;
