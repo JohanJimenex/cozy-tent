@@ -88,13 +88,21 @@ p{margin:12px 0}
 .rejilla li:hover{border-color:var(--ambar);transform:translateY(-3px)}
 .rejilla li b{color:var(--ambar-claro);font-weight:600}
 
-/* --- tiendas --- */
-.tiendas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:26px 0 0;padding:0;list-style:none}
-.chapa{display:flex;align-items:center;gap:9px;border:1px solid var(--borde);border-radius:999px;
-  padding:9px 18px;color:var(--papel);font-size:14.5px;background:var(--panel);transition:.3s}
+/* --- vídeo --- */
+.video{padding:0;line-height:0}
+.video iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:4px}
+.nota{color:var(--suave);font-size:14px;text-align:center;margin-top:12px}
+
+/* --- tiendas: tarjetas negras, como las insignias de las tiendas --- */
+.tiendas{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:12px;
+  margin:30px 0 0;padding:0;list-style:none}
+.chapa{display:flex;align-items:center;gap:12px;background:#0b0907;border:1px solid #33271f;
+  border-radius:8px;padding:12px 16px;color:var(--papel);transition:.3s}
 .chapa:hover{border-color:var(--ambar);transform:translateY(-2px)}
-.chapa svg{width:17px;height:17px;fill:var(--ambar);flex:none}
-.chapa small{color:#8a7360}
+.chapa svg{width:26px;height:26px;fill:var(--papel);flex:none}
+.chapa .texto{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.chapa .nombre{font-weight:600;font-size:15.5px;white-space:nowrap}
+.chapa small{color:#8a7360;font-size:12px;letter-spacing:.4px;text-transform:uppercase}
 
 footer{margin:60px 0 46px;padding-top:20px;border-top:1px solid #3a2a22;color:var(--suave);
   font-size:14.5px;text-align:center}
