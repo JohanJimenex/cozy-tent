@@ -79,4 +79,22 @@
     });
     menu.addEventListener("click", e => { if (e.target.closest("a")) menu.classList.remove("abierto"); });
   }
+  // Los enlaces del menú llevan a su sitio. Se intenta el desplazamiento suave del navegador,
+  // pero si se queda a medias (pasa cuando la pestaña no está en primer plano) se salta y punto.
+  document.addEventListener("click", e => {
+    const enlace = e.target.closest('a[href^="#"]');
+    if (!enlace) return;
+    const id = enlace.getAttribute("href").slice(1);
+    const destino = id ? document.getElementById(id) : null;
+    if (id && !destino) return;
+    e.preventDefault();
+
+    const alto = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--alto-barra")) || 64;
+    const hasta = destino ? Math.max(0, destino.getBoundingClientRect().top + scrollY - alto - 12) : 0;
+    try { scrollTo({ top: hasta, behavior: quieto ? "auto" : "smooth" }); }
+    catch { scrollTo(0, hasta); }
+    setTimeout(() => { if (Math.abs(scrollY - hasta) > 4) scrollTo(0, hasta); }, 700);
+    if (id) history.replaceState(null, "", "#" + id);
+  });
+
 })();

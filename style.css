@@ -12,7 +12,7 @@
   --alto-barra:64px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:var(--alto-barra)}
+html{scroll-padding-top:var(--alto-barra)}
 body{margin:0;color:var(--papel);font:400 17px/1.7 Literata,Georgia,serif;
   background:radial-gradient(900px 520px at 50% -160px,#6b3a1d55,transparent 70%),var(--noche);
   background-attachment:fixed}
@@ -71,10 +71,19 @@ img{max-width:100%}
   45%{box-shadow:0 10px 30px #000a,0 0 96px #f2c04a55}}
 h1{font:600 clamp(38px,7vw,64px)/1.05 Literata,serif;margin:18px 0 10px;letter-spacing:1px;
   text-shadow:0 4px 30px #000a}
+/* El logo del juego hace de título; respira como el farol. */
+h1.logo{margin:0 0 6px}
+h1.logo img{width:min(620px,84vw);filter:drop-shadow(0 12px 34px #000b);
+  animation:respira-logo 6s ease-in-out infinite}
+@keyframes respira-logo{0%,100%{filter:drop-shadow(0 12px 34px #000b) drop-shadow(0 0 18px #e9b25c22)}
+  45%{filter:drop-shadow(0 12px 34px #000b) drop-shadow(0 0 34px #f2c04a55)}}
 .lema{color:#efe0cd;font-size:clamp(17px,2.4vw,21px);margin:0;text-shadow:0 2px 14px #000c}
 .bajar{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:var(--suave);
   font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;animation:flota 2.6s ease-in-out infinite}
 @keyframes flota{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+
+/* Anclas del menú: sin alto, solo marcan el sitio al que salta cada enlace. */
+.ancla{position:relative;top:calc(var(--alto-barra) * -1);height:0}
 
 /* ---------------------------------------------------------------- secciones */
 .envoltorio{position:relative;z-index:3;max-width:940px;margin:0 auto;padding:0 22px}
@@ -166,7 +175,6 @@ body[data-idioma="es"] li.es,body[data-idioma="en"] li.en{display:list-item}
   .enlaces{justify-self:center}
 }
 @media(prefers-reduced-motion:reduce){
-  .gota,.bicho,.portada .fondo,.bajar,.portada img.icono{animation:none}
+  .gota,.bicho,.portada .fondo,.bajar,.portada img.icono,h1.logo img{animation:none}
   .asoma{opacity:1;transform:none;transition:none}
-  html{scroll-behavior:auto}
 }
