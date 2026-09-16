@@ -41,6 +41,19 @@
   addEventListener("load", revisar);
   setTimeout(revisar, 150);
 
+  // Lluvia: cada gota con su largo, su velocidad y su transparencia, para que no se note el patrón.
+  const cortina = document.querySelector(".lluvia");
+  if (cortina && !quieto) for (let i = 0; i < 95; i++) {
+    const gota = document.createElement("div");
+    gota.className = "gota";
+    gota.style.left = (Math.random() * 106 - 3) + "vw";
+    gota.style.height = (12 + Math.random() * 30).toFixed(0) + "px";
+    gota.style.opacity = (.22 + Math.random() * .38).toFixed(2);
+    gota.style.animationDuration = (.75 + Math.random() * .95).toFixed(2) + "s";
+    gota.style.animationDelay = (-Math.random() * 2).toFixed(2) + "s";
+    cortina.appendChild(gota);
+  }
+
   // Luciérnagas sueltas, pocas y lentas.
   if (!quieto) for (let i = 0; i < 9; i++) {
     const bicho = document.createElement("div");

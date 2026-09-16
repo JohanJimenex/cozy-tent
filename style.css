@@ -21,15 +21,12 @@ body{
   background-attachment:fixed;
 }
 
-/* --- lluvia de fondo, la misma idea que fuera de la tienda --- */
-.lluvia{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.30;
-  background-image:
-    repeating-linear-gradient(104deg,transparent 0 22px,rgba(198,220,255,.55) 22px 23px,transparent 23px 46px),
-    repeating-linear-gradient(101deg,transparent 0 38px,rgba(198,220,255,.32) 38px 39px,transparent 39px 74px);
-  background-size:300px 300px,420px 420px;
-  animation:llueve 1.1s linear infinite,llueve-lento 2.3s linear infinite}
-@keyframes llueve{from{background-position:0 0,0 0}to{background-position:-74px 300px,0 0}}
-@keyframes llueve-lento{from{background-position:0 0,0 0}to{background-position:0 0,-84px 420px}}
+/* --- lluvia: gotas sueltas, finas y con caídas distintas --- */
+.lluvia{position:fixed;inset:-10% 0 0;pointer-events:none;z-index:0;overflow:hidden}
+.gota{position:absolute;top:-14%;width:1px;border-radius:1px;
+  background:linear-gradient(to bottom,transparent,rgba(214,230,255,.5));
+  animation:cae linear infinite}
+@keyframes cae{from{transform:translate3d(0,-14vh,0)}to{transform:translate3d(-6vw,114vh,0)}}
 
 /* --- luciérnagas --- */
 .bicho{position:fixed;width:4px;height:4px;border-radius:50%;background:#ffe9a8;
