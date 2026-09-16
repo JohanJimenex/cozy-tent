@@ -100,15 +100,20 @@
       puntos.appendChild(b);
     });
 
-    let actual = 0, solo = null, tocado = false;
+    let actual = 0, solo = null, tocado = false, pendiente = null, hastaCuando = 0;
     const enCarrusel = () => matchMedia("(max-width: 700px)").matches;
 
     function ir(i, aMano) {
       actual = (i + tomas.length) % tomas.length;
       const hasta = tomas[actual].offsetLeft - galeria.offsetLeft - 14;
+      // Se anula el respaldo anterior: con clics seguidos, el viejo tiraba hacia atrás.
+      clearTimeout(pendiente);
+      hastaCuando = Date.now() + 750;
       galeria.scrollTo({ left: hasta, behavior: quieto ? "auto" : "smooth" });
       // Si el deslizamiento suave se queda a medias, se coloca de golpe.
-      setTimeout(() => { if (Math.abs(galeria.scrollLeft - hasta) > 6) galeria.scrollLeft = hasta; }, 700);
+      pendiente = setTimeout(() => {
+        if (Math.abs(galeria.scrollLeft - hasta) > 6) galeria.scrollLeft = hasta;
+      }, 700);
       marcar();
       if (aMano) tocado = true;
     }
@@ -116,6 +121,8 @@
       [...puntos.children].forEach((b, i) => b.setAttribute("aria-selected", String(i === actual)));
     }
     function mirar() {
+      // Mientras se está moviendo por un clic, no se hace caso a las posiciones intermedias.
+      if (Date.now() < hastaCuando) return;
       const centro = galeria.scrollLeft + galeria.clientWidth / 2;
       let cerca = 0, dif = Infinity;
       tomas.forEach((t, i) => {
