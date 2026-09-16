@@ -87,6 +87,55 @@
     if (a.dataset.texto) a.textContent = dir;
   });
 
+  // Carrusel de imágenes en móvil: puntos, flechas y paso solo. En pantallas grandes la
+  // galería sigue siendo una rejilla y esto no hace nada.
+  const galeria = document.querySelector(".galeria");
+  const puntos = document.querySelector(".puntos");
+  if (galeria && puntos) {
+    const tomas = [...galeria.children];
+    tomas.forEach((_, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.role = "tab"; b.setAttribute("aria-label", "Imagen " + (i + 1));
+      b.addEventListener("click", () => ir(i, true));
+      puntos.appendChild(b);
+    });
+
+    let actual = 0, solo = null, tocado = false;
+    const enCarrusel = () => matchMedia("(max-width: 700px)").matches;
+
+    function ir(i, aMano) {
+      actual = (i + tomas.length) % tomas.length;
+      galeria.scrollTo({ left: tomas[actual].offsetLeft - galeria.offsetLeft - 14,
+                         behavior: quieto ? "auto" : "smooth" });
+      marcar();
+      if (aMano) tocado = true;
+    }
+    function marcar() {
+      [...puntos.children].forEach((b, i) => b.setAttribute("aria-selected", String(i === actual)));
+    }
+    function mirar() {
+      const centro = galeria.scrollLeft + galeria.clientWidth / 2;
+      let cerca = 0, dif = Infinity;
+      tomas.forEach((t, i) => {
+        const d = Math.abs(t.offsetLeft - galeria.offsetLeft + t.clientWidth / 2 - centro);
+        if (d < dif) { dif = d; cerca = i; }
+      });
+      if (cerca !== actual) { actual = cerca; marcar(); }
+    }
+
+    galeria.addEventListener("scroll", () => requestAnimationFrame(mirar), { passive: true });
+    galeria.addEventListener("pointerdown", () => tocado = true, { passive: true });
+    document.querySelector(".flecha.atras").addEventListener("click", () => ir(actual - 1, true));
+    document.querySelector(".flecha.adelante").addEventListener("click", () => ir(actual + 1, true));
+    marcar();
+
+    // Pasa sola cada 5 s, y se calla en cuanto el visitante la toca.
+    if (!quieto) solo = setInterval(() => {
+      if (tocado || !enCarrusel() || document.hidden) { if (tocado) clearInterval(solo); return; }
+      ir(actual + 1);
+    }, 5000);
+  }
+
   // Los enlaces del menú llevan a su sitio. Se intenta el desplazamiento suave del navegador,
   // pero si se queda a medias (pasa cuando la pestaña no está en primer plano) se salta y punto.
   document.addEventListener("click", e => {
