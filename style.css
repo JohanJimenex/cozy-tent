@@ -64,7 +64,7 @@ img{max-width:100%}
 @keyframes acercar{from{transform:scale(1.02)}to{transform:scale(1.11)}}
 .portada::after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(#14100e66 0%,#14100e14 30%,#14100ed9 78%,var(--noche) 100%)}
-.portada .dentro{position:relative;z-index:2;padding:40px 20px 90px;max-width:760px}
+.portada .dentro{position:relative;z-index:2;padding:30px 20px 70px;max-width:760px}
 .portada img.icono{width:118px;height:118px;border-radius:26px;
   box-shadow:0 10px 30px #000a,0 0 60px #e9b25c2e;animation:respira 5.5s ease-in-out infinite}
 @keyframes respira{0%,100%{box-shadow:0 10px 30px #000a,0 0 60px #e9b25c2e}
