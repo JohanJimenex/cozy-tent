@@ -75,23 +75,32 @@ h1{font:600 clamp(38px,7vw,64px)/1.05 Literata,serif;margin:18px 0 10px;letter-s
 h1.logo{margin:0 0 6px}
 .solo-lectores{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .capas{position:relative;display:block;width:min(620px,84vw);margin:0 auto;
-  filter:drop-shadow(0 12px 34px #000b)}
+  filter:drop-shadow(0 12px 34px #000b);animation:entra-logo 1.5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes entra-logo{from{opacity:0;transform:scale(.88) translateY(18px)}
+  to{opacity:1;transform:none}}
 .capas img{display:block;width:100%}
+/* Cada capa entra un poco después que la anterior. */
+.capas .base{animation:aparece 1s ease both .15s}
+.titulo{animation:sube-titulo 1.1s cubic-bezier(.2,.7,.2,1) both .45s}
+@keyframes aparece{from{opacity:0}to{opacity:1}}
+@keyframes sube-titulo{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .capas .capa{position:absolute;inset:0}
 
-/* El farol late como una llama. */
-.farol{animation:late-farol 4.5s ease-in-out infinite;
+/* El farol late como una llama y se tambalea colgado de su gancho. */
+.farol{transform-origin:91.9% 55.4%;
+  animation:aparece .9s ease both .6s, late-farol 4.5s ease-in-out .6s infinite, tambalea 6.5s ease-in-out .6s infinite;
   filter:drop-shadow(0 0 10px #f2c04a44)}
 @keyframes late-farol{0%,100%{opacity:.92;filter:drop-shadow(0 0 8px #f2c04a33)}
   40%{opacity:1;filter:drop-shadow(0 0 20px #f2c04a88)}
   62%{opacity:.95;filter:drop-shadow(0 0 13px #f2c04a55)}}
+@keyframes tambalea{0%,100%{transform:rotate(-2.4deg)}50%{transform:rotate(2.4deg)}}
 
 /* La luna sube y baja muy despacio. */
-.luna{animation:flota-luna 9s ease-in-out infinite}
+.luna{animation:aparece .9s ease both .7s, flota-luna 9s ease-in-out .7s infinite}
 @keyframes flota-luna{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
 /* Las estrellas parpadean cada una a su ritmo. */
-.estrella{animation:parpadea 3.4s ease-in-out infinite}
+.estrella{animation:parpadea 3.4s ease-in-out .9s infinite}
 .e2{animation-duration:4.6s;animation-delay:-1.4s}
 .e3{animation-duration:5.6s;animation-delay:-2.7s}
 @keyframes parpadea{0%,100%{opacity:.45}50%{opacity:1;filter:drop-shadow(0 0 7px #ffeab080)}}
@@ -104,7 +113,7 @@ h1.logo{margin:0 0 6px}
   90%,100%{opacity:0;transform:translate(-26px,18px)}}
 
 /* El lema aparece un pelín después, como si lo encendieran. */
-.lema{animation:respira-lema 7s ease-in-out infinite}
+.lema{animation:aparece 1s ease both 1s, respira-lema 7s ease-in-out 1s infinite}
 @keyframes respira-lema{0%,100%{opacity:.82}50%{opacity:1}}
 .lema{color:#efe0cd;font-size:clamp(17px,2.4vw,21px);margin:0;text-shadow:0 2px 14px #000c}
 .bajar{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:var(--suave);
@@ -238,7 +247,7 @@ body[data-idioma="es"] li.es,body[data-idioma="en"] li.en{display:list-item}
   .enlaces{justify-self:center}
 }
 @media(prefers-reduced-motion:reduce){
-  .gota,.bicho,.portada .fondo,.bajar,.portada img.icono,.capas .capa{animation:none}
+  .gota,.bicho,.portada .fondo,.bajar,.portada img.icono,.capas,.capas img{animation:none}
   .fugaz{opacity:0}
   .asoma{opacity:1;transform:none;transition:none}
 }
