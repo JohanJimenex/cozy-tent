@@ -105,8 +105,10 @@
 
     function ir(i, aMano) {
       actual = (i + tomas.length) % tomas.length;
-      galeria.scrollTo({ left: tomas[actual].offsetLeft - galeria.offsetLeft - 14,
-                         behavior: quieto ? "auto" : "smooth" });
+      const hasta = tomas[actual].offsetLeft - galeria.offsetLeft - 14;
+      galeria.scrollTo({ left: hasta, behavior: quieto ? "auto" : "smooth" });
+      // Si el deslizamiento suave se queda a medias, se coloca de golpe.
+      setTimeout(() => { if (Math.abs(galeria.scrollLeft - hasta) > 6) galeria.scrollLeft = hasta; }, 700);
       marcar();
       if (aMano) tocado = true;
     }
