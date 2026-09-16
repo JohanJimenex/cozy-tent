@@ -9,10 +9,26 @@
 </head>
 <body data-idioma="es">
 <div class="lluvia" aria-hidden="true"></div>
-<div class="envoltorio">
-  <div class="idioma">
-    <button data-idioma-boton="es">Español</button><button data-idioma-boton="en">English</button>
+<header class="barra">
+  <a class="marca" href="index.html"><img src="img/icon.png" alt="">Cozy Tent</a>
+  <nav>
+    <ul class="menu" id="menu">
+      <li><a href="index.html#juego"><span class="es">El juego</span><span class="en">The game</span></a></li>
+      <li><a href="index.html#tienda"><span class="es">La tienda</span><span class="en">The tent</span></a></li>
+      <li><a href="index.html#trailer"><span class="es">Tráiler</span><span class="en">Trailer</span></a></li>
+      <li><a href="index.html#tiendas"><span class="es">Dónde jugar</span><span class="en">Where to play</span></a></li>
+    </ul>
+  </nav>
+  <div class="derecha">
+    <div class="idioma">
+      <button data-idioma-boton="es">ES</button><button data-idioma-boton="en">EN</button>
+    </div>
+    <button class="abrir-menu" id="abrir" aria-label="Menú" aria-expanded="false">☰</button>
   </div>
+</header>
+
+
+<div class="envoltorio" style="padding-top:84px">
 
   <div class="es asoma panel" lang="es">
     <h1>Política de privacidad</h1>
@@ -133,10 +149,23 @@
     <p><a href="mailto:johan.jimenez.23@gmail.com">johan.jimenez.23@gmail.com</a></p>
   </div>
 
-  <footer>
-    <p><a href="index.html">Cozy Tent</a> · Jopam Studio</p>
-  </footer>
 </div>
+
+<footer>
+  <div class="pie">
+    <div class="estudio"><img src="img/icon.png" alt="">Jopam Studio</div>
+    <a class="arriba" href="#"><span class="es">Volver<br>arriba</span><span class="en">Back<br>to top</span></a>
+    <div class="enlaces">
+      <a href="privacidad.html"><span class="es">Privacidad</span><span class="en">Privacy</span></a>
+      <a href="mailto:johan.jimenez.23@gmail.com"><span class="es">Contacto</span><span class="en">Contact</span></a>
+    </div>
+  </div>
+  <p class="legal">© 2026 Jopam Studio ·
+    <span class="es">Cozy Tent está en desarrollo; lo que ves puede cambiar.</span>
+    <span class="en">Cozy Tent is in development; what you see may change.</span>
+  </p>
+</footer>
+
 <script src="idioma.js"></script>
 </body>
 </html>

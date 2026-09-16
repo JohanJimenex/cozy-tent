@@ -15,27 +15,39 @@
 <body data-idioma="es">
 <div class="lluvia" aria-hidden="true"></div>
 
-<div class="envoltorio">
-  <div class="idioma">
-    <button data-idioma-boton="es">Español</button><button data-idioma-boton="en">English</button>
+<header class="barra">
+  <a class="marca" href="#"><img src="img/icon.png" alt="">Cozy Tent</a>
+  <nav>
+    <ul class="menu" id="menu">
+      <li><a href="#juego"><span class="es">El juego</span><span class="en">The game</span></a></li>
+      <li><a href="#tienda"><span class="es">La tienda</span><span class="en">The tent</span></a></li>
+      <li><a href="#trailer"><span class="es">Tráiler</span><span class="en">Trailer</span></a></li>
+      <li><a href="#tiendas"><span class="es">Dónde jugar</span><span class="en">Where to play</span></a></li>
+    </ul>
+  </nav>
+  <div class="derecha">
+    <div class="idioma">
+      <button data-idioma-boton="es">ES</button><button data-idioma-boton="en">EN</button>
+    </div>
+    <button class="abrir-menu" id="abrir" aria-label="Menú" aria-expanded="false">☰</button>
   </div>
+</header>
 
-  <header>
-    <img class="farol" src="img/icon.png" alt="Cozy Tent">
+<div class="portada">
+  <div class="fondo" aria-hidden="true"></div>
+  <div class="dentro">
     <h1>Cozy Tent</h1>
     <p class="lema">
       <span class="es">Una noche de lluvia, una tienda cálida y un hurón.</span>
       <span class="en">A rainy night, a warm tent and a ferret.</span>
     </p>
-    <div class="filete"></div>
-  </header>
+  </div>
+  <a class="bajar" href="#juego"><span class="es">Seguir</span><span class="en">Scroll</span> ↓</a>
+</div>
 
-  <figure class="asoma">
-    <div class="marco"><img class="portada" src="img/hero.png" alt=""></div>
-  </figure>
-
+<div class="envoltorio">
   <!-- ---------------------------------------------------------------- español -->
-  <section class="es asoma">
+  <section class="es asoma" id="juego">
     <div class="panel">
       <h2>Un sitio tranquilo</h2>
       <p>Cozy Tent no te pide nada. Te quedas dentro de una tienda en el bosque mientras llueve fuera,
@@ -66,7 +78,7 @@
   </section>
 
   <section class="es asoma">
-    <h2>Dentro de la tienda</h2>
+    <span id="tienda"></span><h2>Dentro de la tienda</h2>
     <ul class="rejilla">
       <li><b>Telescopio</b> · constelaciones que descubres y bautizas</li>
       <li><b>Cámara y álbum</b> · animales, mariposas y lo que cruza el cielo</li>
@@ -156,19 +168,47 @@
     </p>
   </section>
 
-  <ul class="tiendas asoma">
-    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.9 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path d="M16.6 9.3 5.6 2.9 14.9 11z"/><path d="M16.6 14.7 14.9 13l-9.3 8.1z"/><path d="M20.2 10.6c.7.4 1 .9 1 1.4s-.3 1-1 1.4l-2.3 1.3-1.9-2.7 1.9-2.7z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">Google Play</span></span></li>
-    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2 1.6-3 1.7-3-.9-1.4-2.4-1.5-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .7 1 1.5 2.1 2.5 2 1-.1 1.4-.6 2.6-.6s1.5.6 2.6.6c1.1 0 1.8-1 2.4-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.2-.8-2.2-3.1z"/><path d="M14.5 5.9c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.6-.8 2.5.9.1 1.8-.4 2.4-1.1z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">App Store</span></span></li>
-    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-10 9.5l5.4 2.2a2.8 2.8 0 0 1 1.6-.5h.2l2.4-3.4v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.4v.2a2.8 2.8 0 0 1-5.6.2l-3.8-1.6A10 10 0 1 0 12 2z"/><path d="M15.4 7.2a2.5 2.5 0 1 0 0 5.1 2.5 2.5 0 0 0 0-5.1zm0 .9a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2z"/><path d="M8.2 17.9a2.1 2.1 0 0 0 2.6-2.9 2.1 2.1 0 0 0-2.6-1.1l1.2.5a1.6 1.6 0 1 1-1.2 2.9l-1.2-.5c.3.5.7.9 1.2 1.1z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">Steam</span></span></li>
-    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 6.4c-2.4 0-4.3 2.4-4.3 5.6s1.7 5.6 4 5.6c1.6 0 2.8-1 4.4-3.5l1.1-1.8 1.1 1.8c1.6 2.5 2.8 3.5 4.4 3.5 2.3 0 4-2.4 4-5.6s-1.9-5.6-4.3-5.6c-1.7 0-3 .9-4.6 3.3l-.6 1-.6-1C9.8 7.3 8.5 6.4 6.8 6.4zm0 2c.9 0 1.8.7 3 2.6l.6.9-.7 1.1c-1.2 1.8-2 2.5-2.9 2.5-1.1 0-2-1.4-2-3.5s.9-3.6 2-3.6zm10.4 0c1.1 0 2 1.5 2 3.6s-.9 3.5-2 3.5c-.9 0-1.7-.7-2.9-2.5l-.7-1.1.6-.9c1.2-1.9 2.1-2.6 3-2.6z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">Meta Quest</span></span></li>
-  </ul>
 
-  <footer>
-    <p><a href="privacidad.html"><span class="es">Política de privacidad</span><span class="en">Privacy policy</span></a>
-       · <a href="mailto:johan.jimenez.23@gmail.com">johan.jimenez.23@gmail.com</a></p>
-    <p>Jopam Studio</p>
-  </footer>
+  <section class="asoma" id="trailer">
+    <h3 class="titulo"><span class="es">El tráiler</span><span class="en">The trailer</span></h3>
+    <!-- PROVISIONAL: cambiar el id del vídeo por el tráiler real cuando esté. -->
+    <div class="marco video">
+      <iframe src="https://www.youtube-nocookie.com/embed/YE7VzlLtp-4?rel=0"
+              title="Cozy Tent" loading="lazy" allowfullscreen
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <p class="nota">
+      <span class="es">Vídeo de ejemplo mientras se prepara el tráiler del juego.</span>
+      <span class="en">Placeholder video while the game's trailer is being made.</span>
+    </p>
+  </section>
+
+  <section class="asoma" id="tiendas">
+    <h3 class="titulo"><span class="es">Dónde jugar</span><span class="en">Where to play</span></h3>
+    <ul class="tiendas">
+      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.9 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path d="M16.6 9.3 5.6 2.9 14.9 11z"/><path d="M16.6 14.7 14.9 13l-9.3 8.1z"/><path d="M20.2 10.6c.7.4 1 .9 1 1.4s-.3 1-1 1.4l-2.3 1.3-1.9-2.7 1.9-2.7z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">Google Play</span></span></li>
+      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2 1.6-3 1.7-3-.9-1.4-2.4-1.5-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .7 1 1.5 2.1 2.5 2 1-.1 1.4-.6 2.6-.6s1.5.6 2.6.6c1.1 0 1.8-1 2.4-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.2-.8-2.2-3.1z"/><path d="M14.5 5.9c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.6-.8 2.5.9.1 1.8-.4 2.4-1.1z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">App Store</span></span></li>
+      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-10 9.5l5.4 2.2a2.8 2.8 0 0 1 1.6-.5h.2l2.4-3.4v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.4v.2a2.8 2.8 0 0 1-5.6.2l-3.8-1.6A10 10 0 1 0 12 2z"/><path d="M15.4 7.2a2.5 2.5 0 1 0 0 5.1 2.5 2.5 0 0 0 0-5.1zm0 .9a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2z"/><path d="M8.2 17.9a2.1 2.1 0 0 0 2.6-2.9 2.1 2.1 0 0 0-2.6-1.1l1.2.5a1.6 1.6 0 1 1-1.2 2.9l-1.2-.5c.3.5.7.9 1.2 1.1z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">Steam</span></span></li>
+      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 6.4c-2.4 0-4.3 2.4-4.3 5.6s1.7 5.6 4 5.6c1.6 0 2.8-1 4.4-3.5l1.1-1.8 1.1 1.8c1.6 2.5 2.8 3.5 4.4 3.5 2.3 0 4-2.4 4-5.6s-1.9-5.6-4.3-5.6c-1.7 0-3 .9-4.6 3.3l-.6 1-.6-1C9.8 7.3 8.5 6.4 6.8 6.4zm0 2c.9 0 1.8.7 3 2.6l.6.9-.7 1.1c-1.2 1.8-2 2.5-2.9 2.5-1.1 0-2-1.4-2-3.5s.9-3.6 2-3.6zm10.4 0c1.1 0 2 1.5 2 3.6s-.9 3.5-2 3.5c-.9 0-1.7-.7-2.9-2.5l-.7-1.1.6-.9c1.2-1.9 2.1-2.6 3-2.6z"/></svg><span class="texto"><small><span class="es">Pronto en</span><span class="en">Coming soon to</span></small><span class="nombre">Meta Quest</span></span></li>
+    </ul>
+  </section>
 </div>
+
+<footer>
+  <div class="pie">
+    <div class="estudio"><img src="img/icon.png" alt="">Jopam Studio</div>
+    <a class="arriba" href="#"><span class="es">Volver<br>arriba</span><span class="en">Back<br>to top</span></a>
+    <div class="enlaces">
+      <a href="privacidad.html"><span class="es">Privacidad</span><span class="en">Privacy</span></a>
+      <a href="mailto:johan.jimenez.23@gmail.com"><span class="es">Contacto</span><span class="en">Contact</span></a>
+    </div>
+  </div>
+  <p class="legal">© 2026 Jopam Studio ·
+    <span class="es">Cozy Tent está en desarrollo; lo que ves puede cambiar.</span>
+    <span class="en">Cozy Tent is in development; what you see may change.</span>
+  </p>
+</footer>
+
 <script src="idioma.js"></script>
 </body>
 </html>

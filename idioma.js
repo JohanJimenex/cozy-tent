@@ -64,4 +64,19 @@
     bicho.style.animationDuration = (11 + Math.random() * 8).toFixed(1) + "s";
     document.body.appendChild(bicho);
   }
+  // Cabecera: se encoge al bajar y el menú se pliega en móvil.
+  const barra = document.querySelector(".barra");
+  const menu = document.getElementById("menu");
+  const abrir = document.getElementById("abrir");
+  if (barra) {
+    const marcar = () => barra.classList.toggle("pegada", scrollY > 30);
+    marcar(); addEventListener("scroll", marcar, { passive: true });
+  }
+  if (abrir && menu) {
+    abrir.addEventListener("click", () => {
+      const visible = menu.classList.toggle("abierto");
+      abrir.setAttribute("aria-expanded", String(visible));
+    });
+    menu.addEventListener("click", e => { if (e.target.closest("a")) menu.classList.remove("abierto"); });
+  }
 })();

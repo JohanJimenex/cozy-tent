@@ -1,125 +1,160 @@
-/* Cozy Tent — el mismo lenguaje visual del juego: luz de farol, paneles translúcidos
-   cálidos, marco de madera de la UI y filete ámbar. */
+/* Cozy Tent — luz de farol, marco de madera de la UI del juego y filete ámbar.
+   Estructura de página de juego: cabecera fija, portada a sangre, secciones con
+   título decorado, tarjetas de tienda y pie con vuelta arriba. */
 @font-face{font-family:Literata;src:url(fonts/Literata-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:Literata;src:url(fonts/Literata-SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
 
 :root{
-  --noche:#14100e; --lona:#2a1a14; --panel:rgba(74,46,32,.55); --borde:#6b503c;
-  --papel:#f3e7d6; --suave:#c6ab92; --ambar:#e9b25c; --ambar-claro:#f2c04a; --musgo:#8dae6a;
+  --noche:#14100e; --panel:rgba(74,46,32,.55); --borde:#3d2d23;
+  --papel:#f3e7d6; --suave:#c6ab92; --tenue:#8a7360;
+  --ambar:#e9b25c; --ambar-claro:#f2c04a;
   --marco:url(img/frame_wood.png) 32 fill / 26px stretch;
+  --alto-barra:64px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--alto-barra)}
+body{margin:0;color:var(--papel);font:400 17px/1.7 Literata,Georgia,serif;
+  background:radial-gradient(900px 520px at 50% -160px,#6b3a1d55,transparent 70%),var(--noche);
+  background-attachment:fixed}
 a{color:var(--ambar);text-underline-offset:3px;text-decoration-color:#8a6a45;transition:color .25s}
 a:hover{color:var(--ambar-claro)}
-html{scroll-behavior:smooth}
-body{
-  margin:0;color:var(--papel);font:400 17px/1.7 Literata,Georgia,serif;
-  background:
-    radial-gradient(900px 520px at 50% -140px,#6b3a1d55,transparent 70%),
-    radial-gradient(700px 420px at 12% 18%,#8a4a1f33,transparent 70%),
-    var(--noche);
-  background-attachment:fixed;
-}
+img{max-width:100%}
 
-/* --- lluvia: gotas sueltas, finas y con caídas distintas --- */
-.lluvia{position:fixed;inset:-10% 0 0;pointer-events:none;z-index:0;overflow:hidden}
+/* ---------------------------------------------------------------- lluvia y luciérnagas */
+.lluvia{position:fixed;inset:-10% 0 0;pointer-events:none;z-index:2;overflow:hidden}
 .gota{position:absolute;top:-14%;width:1px;border-radius:1px;
-  background:linear-gradient(to bottom,transparent,rgba(214,230,255,.5));
-  animation:cae linear infinite}
+  background:linear-gradient(to bottom,transparent,rgba(214,230,255,.5));animation:cae linear infinite}
 @keyframes cae{from{transform:translate3d(0,-14vh,0)}to{transform:translate3d(-6vw,114vh,0)}}
-
-/* --- luciérnagas --- */
 .bicho{position:fixed;width:4px;height:4px;border-radius:50%;background:#ffe9a8;
-  box-shadow:0 0 10px 3px #ffd97a88;opacity:0;z-index:0;animation:vuela 14s ease-in-out infinite}
-@keyframes vuela{
-  0%{opacity:0;transform:translate(0,0)}
-  15%{opacity:.9} 50%{opacity:.35;transform:translate(34px,-46px)}
-  75%{opacity:.85;transform:translate(-18px,-84px)}
+  box-shadow:0 0 10px 3px #ffd97a88;opacity:0;z-index:2;animation:vuela 14s ease-in-out infinite}
+@keyframes vuela{0%{opacity:0;transform:translate(0,0)}15%{opacity:.9}
+  50%{opacity:.35;transform:translate(34px,-46px)}75%{opacity:.85;transform:translate(-18px,-84px)}
   100%{opacity:0;transform:translate(16px,-130px)}}
 
-.envoltorio{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 20px}
-
-/* --- barra de idioma --- */
-.idioma{display:flex;justify-content:flex-end;gap:8px;padding:18px 0 0}
-.idioma button{
-  font:600 13px/1 Literata,serif;letter-spacing:.3px;color:var(--suave);cursor:pointer;
-  background:var(--panel);border:1px solid var(--borde);border-radius:999px;padding:8px 16px;
-  backdrop-filter:blur(3px);transition:.25s}
+/* ---------------------------------------------------------------- cabecera */
+.barra{position:fixed;top:0;left:0;right:0;z-index:20;height:var(--alto-barra);
+  display:flex;align-items:center;gap:26px;padding:0 24px;
+  background:linear-gradient(#14100ee6,#14100e99);backdrop-filter:blur(8px);
+  border-bottom:1px solid transparent;transition:height .3s,background .3s,border-color .3s}
+.barra.pegada{height:54px;background:#14100ef2;border-bottom-color:#3a2a22}
+.marca{display:flex;align-items:center;gap:10px;font:600 17px/1 Literata,serif;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--papel);text-decoration:none;white-space:nowrap}
+.marca img{width:34px;height:34px;border-radius:9px}
+.menu{display:flex;gap:22px;margin-left:8px;list-style:none;padding:0}
+.menu a{color:var(--suave);text-decoration:none;font-size:14px;letter-spacing:1.1px;text-transform:uppercase;
+  padding:6px 0;position:relative}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--ambar);
+  transition:right .3s}
+.menu a:hover{color:var(--papel)}
+.menu a:hover::after{right:0}
+.derecha{margin-left:auto;display:flex;align-items:center;gap:12px}
+.idioma{display:flex;gap:6px}
+.idioma button{font:600 12px/1 Literata,serif;letter-spacing:.6px;color:var(--tenue);cursor:pointer;
+  background:none;border:1px solid var(--borde);border-radius:4px;padding:7px 11px;transition:.25s}
 .idioma button:hover{color:var(--papel);border-color:var(--ambar)}
-.idioma button[aria-pressed="true"]{color:#2a1a10;background:var(--ambar);border-color:var(--ambar-claro)}
+.idioma button[aria-pressed="true"]{color:var(--noche);background:var(--ambar);border-color:var(--ambar)}
+.abrir-menu{display:none;background:none;border:1px solid var(--borde);border-radius:4px;color:var(--papel);
+  font-size:18px;line-height:1;padding:8px 11px;cursor:pointer}
 
-/* --- cabecera con farol --- */
-header{text-align:center;padding:26px 0 10px;position:relative}
-.farol{width:118px;height:118px;border-radius:26px;display:block;margin:0 auto;
-  box-shadow:0 10px 30px #000a,0 0 70px #e9b25c33;animation:respira 5.5s ease-in-out infinite}
+/* ---------------------------------------------------------------- portada */
+.portada{position:relative;min-height:88vh;display:grid;place-items:end center;text-align:center;
+  overflow:hidden;margin-top:var(--alto-barra)}
+.portada .fondo{position:absolute;inset:-6% -2%;background:url(img/hero.png) center/cover no-repeat;
+  animation:acercar 26s ease-in-out infinite alternate;z-index:0}
+@keyframes acercar{from{transform:scale(1.02)}to{transform:scale(1.11)}}
+.portada::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(#14100e66 0%,#14100e14 30%,#14100ed9 78%,var(--noche) 100%)}
+.portada .dentro{position:relative;z-index:2;padding:0 20px 120px;max-width:760px}
+.portada img.icono{width:118px;height:118px;border-radius:26px;
+  box-shadow:0 10px 30px #000a,0 0 60px #e9b25c2e;animation:respira 5.5s ease-in-out infinite}
 @keyframes respira{0%,100%{box-shadow:0 10px 30px #000a,0 0 60px #e9b25c2e}
   45%{box-shadow:0 10px 30px #000a,0 0 96px #f2c04a55}}
-h1{font:600 42px/1.1 Literata,serif;margin:20px 0 8px;letter-spacing:.6px}
-.lema{color:var(--suave);font-size:19px;margin:0 0 4px}
-.filete{width:104px;height:2px;margin:20px auto 0;border-radius:2px;
-  background:linear-gradient(90deg,transparent,var(--ambar),transparent)}
+h1{font:600 clamp(38px,7vw,64px)/1.05 Literata,serif;margin:22px 0 10px;letter-spacing:1px;
+  text-shadow:0 4px 30px #000a}
+.lema{color:#efe0cd;font-size:clamp(17px,2.4vw,21px);margin:0;text-shadow:0 2px 14px #000c}
+.bajar{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:var(--suave);
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;animation:flota 2.6s ease-in-out infinite}
+@keyframes flota{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
 
-/* --- marco de madera del juego --- */
-.marco{border:26px solid transparent;border-image:var(--marco);background:var(--panel);
-  backdrop-filter:blur(2px)}
-.portada{display:block;width:100%;border-radius:4px}
-figure{margin:34px 0}
-figcaption{color:var(--suave);font-size:14px;text-align:center;margin-top:10px}
-
-/* --- secciones --- */
-section{margin:46px 0}
-h2{font:600 25px/1.3 Literata,serif;margin:0 0 6px;color:var(--ambar-claro)}
+/* ---------------------------------------------------------------- secciones */
+.envoltorio{position:relative;z-index:3;max-width:940px;margin:0 auto;padding:0 22px}
+section{margin:76px 0}
+.titulo{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 26px;
+  font:600 clamp(20px,3vw,27px)/1.2 Literata,serif;letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--papel);text-align:center}
+.titulo::before,.titulo::after{content:"";height:1px;flex:1;max-width:120px;
+  background:linear-gradient(90deg,transparent,var(--ambar))}
+.titulo::after{background:linear-gradient(90deg,var(--ambar),transparent)}
+h2{font:600 24px/1.3 Literata,serif;margin:0 0 8px;color:var(--ambar-claro)}
 p{margin:12px 0}
-.panel{padding:26px 28px;margin-top:22px;border-radius:12px;background:var(--panel);border:1px solid var(--borde);
+.panel{padding:26px 28px;border-radius:12px;background:var(--panel);border:1px solid #6b503c;
   backdrop-filter:blur(3px);box-shadow:0 12px 34px #0006}
-
-/* --- móvil con la captura del juego --- */
+.dos{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.marco{border:26px solid transparent;border-image:var(--marco);background:var(--panel)}
 .movil{max-width:300px;margin:0 auto;border:12px solid transparent;border-image:var(--marco);
   border-radius:8px;background:#000;box-shadow:0 18px 50px #000b;transition:transform .5s ease}
 .movil:hover{transform:translateY(-6px) rotate(-.6deg)}
 .movil img{display:block;width:100%}
-.dos{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
-@media(max-width:700px){.dos{grid-template-columns:1fr}h1{font-size:34px}}
+.video{padding:0;line-height:0}
+.video iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:4px}
+.nota{color:var(--tenue);font-size:14px;text-align:center;margin-top:12px}
 
-/* --- lista de lo que hay dentro --- */
-.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:16px;padding:0;list-style:none}
-.rejilla li{background:var(--panel);border:1px solid var(--borde);border-radius:10px;padding:13px 15px;
-  font-size:15.5px;color:var(--papel);transition:.3s}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;padding:0;list-style:none}
+.rejilla li{background:var(--panel);border:1px solid #6b503c;border-radius:10px;padding:14px 16px;
+  font-size:15.5px;transition:.3s}
 .rejilla li:hover{border-color:var(--ambar);transform:translateY(-3px)}
 .rejilla li b{color:var(--ambar-claro);font-weight:600}
 
-/* --- vídeo --- */
-.video{padding:0;line-height:0}
-.video iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:4px}
-.nota{color:var(--suave);font-size:14px;text-align:center;margin-top:12px}
-
-/* --- tiendas: tarjetas negras, como las insignias de las tiendas --- */
-.tiendas{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:12px;
-  margin:30px 0 0;padding:0;list-style:none}
-.chapa{display:flex;align-items:center;gap:12px;background:#0b0907;border:1px solid #33271f;
-  border-radius:8px;padding:12px 16px;color:var(--papel);transition:.3s}
-.chapa:hover{border-color:var(--ambar);transform:translateY(-2px)}
-.chapa svg{width:26px;height:26px;fill:var(--papel);flex:none}
+/* ---------------------------------------------------------------- tiendas */
+.tiendas{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;padding:0;list-style:none}
+.chapa{position:relative;display:flex;align-items:center;gap:13px;background:#0b0907;
+  border:1px solid #33271f;padding:15px 18px;transition:.3s}
+.chapa::before,.chapa::after{content:"";position:absolute;width:13px;height:13px;
+  border:2px solid var(--ambar);opacity:.85;transition:.3s}
+.chapa::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.chapa::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.chapa:hover{border-color:#5a4535;transform:translateY(-3px);box-shadow:0 10px 26px #0008,0 0 24px #e9b25c22}
+.chapa:hover::before,.chapa:hover::after{width:19px;height:19px;opacity:1}
+.chapa svg{width:27px;height:27px;fill:var(--papel);flex:none}
 .chapa .texto{display:flex;flex-direction:column;line-height:1.25;min-width:0}
 .chapa .nombre{font-weight:600;font-size:15.5px;white-space:nowrap}
-.chapa small{color:#8a7360;font-size:12px;letter-spacing:.4px;text-transform:uppercase}
+.chapa small{color:var(--tenue);font-size:11.5px;letter-spacing:1px;text-transform:uppercase}
 
-footer{margin:60px 0 46px;padding-top:20px;border-top:1px solid #3a2a22;color:var(--suave);
-  font-size:14.5px;text-align:center}
+/* ---------------------------------------------------------------- pie */
+footer{position:relative;z-index:3;margin-top:90px;padding:44px 22px 40px;border-top:1px solid #2b201a;
+  background:linear-gradient(#0f0c0a00,#0b0908)}
+.pie{max-width:940px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+.pie .estudio{display:flex;align-items:center;gap:12px;color:var(--suave);font-size:14.5px}
+.pie .estudio img{width:40px;height:40px;border-radius:10px}
+.arriba{justify-self:center;width:108px;height:108px;display:grid;place-items:center;text-align:center;
+  border-radius:50%;border:1px dashed #4a382c;color:var(--suave);text-decoration:none;font-size:11px;
+  letter-spacing:1.6px;text-transform:uppercase;transition:.35s}
+.arriba:hover{color:var(--ambar-claro);border-color:var(--ambar);transform:translateY(-4px) rotate(6deg)}
+.enlaces{justify-self:end;display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;font-size:14px}
+.legal{max-width:940px;margin:30px auto 0;padding-top:20px;border-top:1px solid #2b201a;
+  color:var(--tenue);font-size:13px;text-align:center}
 
-/* --- aparecer al bajar --- */
-.asoma{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+/* ---------------------------------------------------------------- aparecer y idiomas */
+.asoma{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
 .asoma.visible{opacity:1;transform:none}
-
-/* --- idiomas --- */
 .es,.en{display:none}
 body[data-idioma="es"] div.es,body[data-idioma="en"] div.en,
 body[data-idioma="es"] section.es,body[data-idioma="en"] section.en{display:block}
 body[data-idioma="es"] span.es,body[data-idioma="en"] span.en{display:inline}
 body[data-idioma="es"] li.es,body[data-idioma="en"] li.en{display:list-item}
 
+@media(max-width:820px){
+  .menu{position:fixed;top:var(--alto-barra);left:0;right:0;flex-direction:column;gap:0;
+    background:#14100ef7;border-bottom:1px solid #3a2a22;padding:6px 22px 14px;display:none}
+  .menu.abierto{display:flex}
+  .menu a{display:block;padding:12px 0;border-bottom:1px solid #241b16}
+  .abrir-menu{display:block}
+  .dos{grid-template-columns:1fr}
+  .pie{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .enlaces{justify-self:center}
+}
 @media(prefers-reduced-motion:reduce){
-  .lluvia,.bicho,.farol{animation:none}
+  .gota,.bicho,.portada .fondo,.bajar,.portada img.icono{animation:none}
   .asoma{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
 }
