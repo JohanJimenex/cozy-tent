@@ -138,9 +138,23 @@
     document.querySelector(".flecha.adelante").addEventListener("click", () => ir(actual + 1, true));
     marcar();
 
-    // Pasa sola cada 5 s, y se calla en cuanto el visitante la toca.
+    // Solo pasa sola mientras la galería se está viendo.
+    let aLaVista = false;
+    new IntersectionObserver(e => { aLaVista = e[0].isIntersecting; }, { threshold: .4 })
+      .observe(galeria);
+
+    // Y se queda quieta mientras el visitante baja o sube la página.
+    let bajando = false, avisoBajando = null;
+    addEventListener("scroll", () => {
+      bajando = true;
+      clearTimeout(avisoBajando);
+      avisoBajando = setTimeout(() => bajando = false, 900);
+    }, { passive: true });
+
+    // Cada 5 s, y se calla del todo en cuanto el visitante la toca.
     if (!quieto) solo = setInterval(() => {
-      if (tocado || !enCarrusel() || document.hidden) { if (tocado) clearInterval(solo); return; }
+      if (tocado) { clearInterval(solo); return; }
+      if (!aLaVista || bajando || !enCarrusel() || document.hidden) return;
       ir(actual + 1);
     }, 5000);
   }
