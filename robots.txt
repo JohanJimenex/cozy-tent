@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://johanjimenex.github.io/cozy-tent/sitemap.xml

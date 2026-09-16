@@ -79,6 +79,14 @@
     });
     menu.addEventListener("click", e => { if (e.target.closest("a")) menu.classList.remove("abierto"); });
   }
+  // El correo no va escrito en el HTML: se arma aquí para que los robots de spam no lo pillen
+  // leyendo la página. No es infalible, pero se libra de los que solo buscan "mailto:".
+  document.querySelectorAll("a.correo").forEach(a => {
+    const dir = a.dataset.u + String.fromCharCode(64) + a.dataset.d;
+    a.href = "mailto:" + dir;
+    if (a.dataset.texto) a.textContent = dir;
+  });
+
   // Los enlaces del menú llevan a su sitio. Se intenta el desplazamiento suave del navegador,
   // pero si se queda a medias (pasa cuando la pestaña no está en primer plano) se salta y punto.
   document.addEventListener("click", e => {
