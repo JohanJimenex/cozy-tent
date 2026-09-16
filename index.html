@@ -4,75 +4,153 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cozy Tent</title>
-<meta name="description" content="A rainy night in a warm tent with a ferret. Watch the sky and take it slow.">
+<meta name="description" content="Una noche de lluvia, una tienda cálida y un hurón. Mira el cielo y tómate tu tiempo.">
 <meta property="og:title" content="Cozy Tent">
 <meta property="og:description" content="A rainy night in a warm tent with a ferret.">
 <meta property="og:image" content="img/hero.png">
+<meta name="theme-color" content="#14100e">
 <link rel="icon" href="img/icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-idioma="es">
+<div class="lluvia" aria-hidden="true"></div>
+
 <div class="envoltorio">
   <div class="idioma">
     <button data-idioma-boton="es">Español</button><button data-idioma-boton="en">English</button>
   </div>
 
   <header>
-    <img class="icono" src="img/icon.png" alt="Cozy Tent">
+    <img class="farol" src="img/icon.png" alt="Cozy Tent">
     <h1>Cozy Tent</h1>
     <p class="lema">
-      <span class="es" lang="es">Una noche de lluvia, una tienda cálida y un hurón.</span>
-      <span class="en" lang="en">A rainy night, a warm tent and a ferret.</span>
+      <span class="es">Una noche de lluvia, una tienda cálida y un hurón.</span>
+      <span class="en">A rainy night, a warm tent and a ferret.</span>
     </p>
+    <div class="filete"></div>
   </header>
 
-  <img class="portada" src="img/hero.png" alt="">
+  <figure class="asoma">
+    <div class="marco"><img class="portada" src="img/hero.png" alt=""></div>
+  </figure>
 
-  <div class="es" lang="es">
-    <h2>Un sitio tranquilo</h2>
-    <p>Cozy Tent no te pide nada. Te quedas dentro de una tienda en el bosque mientras llueve fuera,
-       y haces lo que te apetezca.</p>
-    <p>Enciende la vela. Pon la cafetera y prepara café, té o chocolate. Busca una emisora en la radio.
-       Lee un libro. Juega al ajedrez. Riega la planta y espera a que florezca.</p>
-    <h2>Fuera, la noche sigue sola</h2>
-    <p>Pasan ciervos y zorros. Salen luciérnagas. Cruzan estrellas fugaces y, de vez en cuando, aparece
-       algo más raro: una aurora, un cometa, un arcoíris después de la tormenta. Apunta el telescopio a
-       una constelación, hazle una foto y guárdala en tu álbum.</p>
-    <h2>Un hurón vive contigo</h2>
-    <p>Ponle nombre, dale de comer, acarícialo cuando se acerque. Sale por su cuenta y vuelve con cosas
-       que encuentra. Cada tanto te roba algo de la tienda.</p>
-    <h2>El cielo va por el reloj real</h2>
-    <p>La luna y la hora siguen las de verdad, así que la tienda nunca es igual dos veces. Vuelve mañana
-       y algo habrá cambiado. Sin cronómetros, sin puntuaciones y sin nada que recuperar al volver.</p>
-  </div>
+  <!-- ---------------------------------------------------------------- español -->
+  <section class="es asoma">
+    <div class="panel">
+      <h2>Un sitio tranquilo</h2>
+      <p>Cozy Tent no te pide nada. Te quedas dentro de una tienda en el bosque mientras llueve fuera,
+         y haces lo que te apetezca.</p>
+      <p>Enciende la vela. Pon la cafetera y prepara café, té o chocolate. Busca una emisora en la radio.
+         Lee un libro. Juega al ajedrez. Riega la planta y espera a que florezca.</p>
+    </div>
+  </section>
 
-  <div class="en" lang="en">
-    <h2>A quiet place</h2>
-    <p>Cozy Tent asks nothing of you. You stay inside a tent in the forest while the rain falls outside,
-       and you do whatever you feel like doing.</p>
-    <p>Light the candle. Put the kettle on and make coffee, tea or hot chocolate. Find a station on the
-       radio. Read a book. Play chess. Water the plant and wait for it to bloom.</p>
-    <h2>Outside, the night goes on by itself</h2>
-    <p>Deer and foxes pass by. Fireflies come out. Shooting stars cross the sky and, once in a while,
-       something rarer shows up: an aurora, a comet, a rainbow after a storm. Point the telescope at a
-       constellation, take a photo of it and keep it in your album.</p>
-    <h2>A ferret lives here with you</h2>
-    <p>Give it a name, feed it, pet it when it comes over. It goes out on its own and brings back little
-       things it finds, and every so often it steals something from the tent.</p>
-    <h2>The sky follows the real clock</h2>
-    <p>The moon and the hour are the real ones, so the tent is never the same twice. Come back tomorrow
-       and something will have changed. No timers, no scores, nothing to catch up on when you return.</p>
-  </div>
+  <section class="es asoma">
+    <div class="dos">
+      <div>
+        <h2>Fuera, la noche sigue sola</h2>
+        <p>Pasan ciervos y zorros. Salen luciérnagas. Cruzan estrellas fugaces y, de vez en cuando,
+           aparece algo más raro: una aurora, un cometa, un arcoíris después de la tormenta.</p>
+        <p>Apunta el telescopio a una constelación, hazle una foto y guárdala en tu álbum.</p>
+      </div>
+      <div class="movil"><img src="img/shot_tent.png" alt="La tienda de noche con la hoguera encendida"></div>
+    </div>
+  </section>
 
-  <div class="tiendas">
-    <span class="chapa pronto">Google Play</span>
-    <span class="chapa pronto">App Store</span>
-    <span class="chapa pronto">Steam</span>
-    <span class="chapa pronto">Meta Quest</span>
-  </div>
+  <section class="es asoma">
+    <div class="panel">
+      <h2>Un hurón vive contigo</h2>
+      <p>Ponle nombre, dale de comer, acarícialo cuando se acerque. Sale por su cuenta y vuelve con cosas
+         que encuentra. Cada tanto te roba algo de la tienda.</p>
+    </div>
+  </section>
+
+  <section class="es asoma">
+    <h2>Dentro de la tienda</h2>
+    <ul class="rejilla">
+      <li><b>Telescopio</b> · constelaciones que descubres y bautizas</li>
+      <li><b>Cámara y álbum</b> · animales, mariposas y lo que cruza el cielo</li>
+      <li><b>Ajedrez</b> · tres niveles, contra el tablero de la esquina</li>
+      <li><b>Libros</b> · para leer sin prisa, y traer los tuyos</li>
+      <li><b>Radio</b> · emisoras para el fondo de la lluvia</li>
+      <li><b>Planta</b> · crece durante días de verdad hasta florecer</li>
+      <li><b>Pizarra y corcho</b> · tus notas y tus fotos en la pared</li>
+      <li><b>Baúl</b> · lo que el hurón trae de fuera</li>
+    </ul>
+  </section>
+
+  <section class="es asoma">
+    <div class="panel">
+      <h2>El cielo va por el reloj real</h2>
+      <p>La luna y la hora siguen las de verdad, así que la tienda nunca es igual dos veces. Vuelve mañana
+         y algo habrá cambiado.</p>
+      <p>Sin cronómetros, sin puntuaciones y sin nada que recuperar al volver.</p>
+    </div>
+  </section>
+
+  <!-- ---------------------------------------------------------------- english -->
+  <section class="en asoma">
+    <div class="panel">
+      <h2>A quiet place</h2>
+      <p>Cozy Tent asks nothing of you. You stay inside a tent in the forest while the rain falls outside,
+         and you do whatever you feel like doing.</p>
+      <p>Light the candle. Put the kettle on and make coffee, tea or hot chocolate. Find a station on the
+         radio. Read a book. Play chess. Water the plant and wait for it to bloom.</p>
+    </div>
+  </section>
+
+  <section class="en asoma">
+    <div class="dos">
+      <div>
+        <h2>Outside, the night goes on by itself</h2>
+        <p>Deer and foxes pass by. Fireflies come out. Shooting stars cross the sky and, once in a while,
+           something rarer shows up: an aurora, a comet, a rainbow after a storm.</p>
+        <p>Point the telescope at a constellation, take a photo of it and keep it in your album.</p>
+      </div>
+      <div class="movil"><img src="img/shot_tent.png" alt="The tent at night with the campfire lit"></div>
+    </div>
+  </section>
+
+  <section class="en asoma">
+    <div class="panel">
+      <h2>A ferret lives here with you</h2>
+      <p>Give it a name, feed it, pet it when it comes over. It goes out on its own and brings back little
+         things it finds, and every so often it steals something from the tent.</p>
+    </div>
+  </section>
+
+  <section class="en asoma">
+    <h2>Inside the tent</h2>
+    <ul class="rejilla">
+      <li><b>Telescope</b> · constellations you find and name</li>
+      <li><b>Camera and album</b> · animals, butterflies and what crosses the sky</li>
+      <li><b>Chess</b> · three levels, against the board in the corner</li>
+      <li><b>Books</b> · to read slowly, and bring your own</li>
+      <li><b>Radio</b> · stations to go with the rain</li>
+      <li><b>Plant</b> · grows over real days until it blooms</li>
+      <li><b>Whiteboard and corkboard</b> · your notes and photos on the wall</li>
+      <li><b>Chest</b> · whatever the ferret brings back</li>
+    </ul>
+  </section>
+
+  <section class="en asoma">
+    <div class="panel">
+      <h2>The sky follows the real clock</h2>
+      <p>The moon and the hour are the real ones, so the tent is never the same twice. Come back tomorrow
+         and something will have changed.</p>
+      <p>No timers, no scores, nothing to catch up on when you return.</p>
+    </div>
+  </section>
+
+  <ul class="tiendas asoma">
+    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.9 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path d="M16.6 9.3 5.6 2.9 14.9 11z"/><path d="M16.6 14.7 14.9 13l-9.3 8.1z"/><path d="M20.2 10.6c.7.4 1 .9 1 1.4s-.3 1-1 1.4l-2.3 1.3-1.9-2.7 1.9-2.7z"/></svg><span>Google Play</span><small><span class="es">· pronto</span><span class="en">· soon</span></small></li>
+    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2 1.6-3 1.7-3-.9-1.4-2.4-1.5-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .7 1 1.5 2.1 2.5 2 1-.1 1.4-.6 2.6-.6s1.5.6 2.6.6c1.1 0 1.8-1 2.4-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.2-.8-2.2-3.1z"/><path d="M14.5 5.9c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.6-.8 2.5.9.1 1.8-.4 2.4-1.1z"/></svg><span>App Store</span><small><span class="es">· pronto</span><span class="en">· soon</span></small></li>
+    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-10 9.5l5.4 2.2a2.8 2.8 0 0 1 1.6-.5h.2l2.4-3.4v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.4v.2a2.8 2.8 0 0 1-5.6.2l-3.8-1.6A10 10 0 1 0 12 2z"/><path d="M15.4 7.2a2.5 2.5 0 1 0 0 5.1 2.5 2.5 0 0 0 0-5.1zm0 .9a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2z"/><path d="M8.2 17.9a2.1 2.1 0 0 0 2.6-2.9 2.1 2.1 0 0 0-2.6-1.1l1.2.5a1.6 1.6 0 1 1-1.2 2.9l-1.2-.5c.3.5.7.9 1.2 1.1z"/></svg><span>Steam</span><small><span class="es">· pronto</span><span class="en">· soon</span></small></li>
+    <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 6.4c-2.4 0-4.3 2.4-4.3 5.6s1.7 5.6 4 5.6c1.6 0 2.8-1 4.4-3.5l1.1-1.8 1.1 1.8c1.6 2.5 2.8 3.5 4.4 3.5 2.3 0 4-2.4 4-5.6s-1.9-5.6-4.3-5.6c-1.7 0-3 .9-4.6 3.3l-.6 1-.6-1C9.8 7.3 8.5 6.4 6.8 6.4zm0 2c.9 0 1.8.7 3 2.6l.6.9-.7 1.1c-1.2 1.8-2 2.5-2.9 2.5-1.1 0-2-1.4-2-3.5s.9-3.6 2-3.6zm10.4 0c1.1 0 2 1.5 2 3.6s-.9 3.5-2 3.5c-.9 0-1.7-.7-2.9-2.5l-.7-1.1.6-.9c1.2-1.9 2.1-2.6 3-2.6z"/></svg><span>Meta Quest</span><small><span class="es">· pronto</span><span class="en">· soon</span></small></li>
+  </ul>
 
   <footer>
-    <p><a href="privacidad.html"><span class="es" lang="es">Política de privacidad</span><span class="en" lang="en">Privacy policy</span></a>
+    <p><a href="privacidad.html"><span class="es">Política de privacidad</span><span class="en">Privacy policy</span></a>
        · <a href="mailto:johan.jimenez.23@gmail.com">johan.jimenez.23@gmail.com</a></p>
     <p>Jopam Studio</p>
   </footer>
