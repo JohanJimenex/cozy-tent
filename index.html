@@ -34,7 +34,16 @@
   "gamePlatform": ["Android", "iOS", "PC", "Meta Quest"],
   "applicationCategory": "Game",
   "author": { "@type": "Organization", "name": "Jopam Studio", "url": "https://johanjimenex.github.io/cozy-tent/" },
-  "publisher": { "@type": "Organization", "name": "Jopam Studio" }
+  "publisher": { "@type": "Organization", "name": "Jopam Studio" },
+  "trailer": {
+    "@type": "VideoObject",
+    "name": "Cozy Tent - Trailer",
+    "description": "Tráiler de Cozy Tent.",
+    "thumbnailUrl": "https://johanjimenex.github.io/cozy-tent/video/trailer-poster.jpg",
+    "contentUrl": "https://johanjimenex.github.io/cozy-tent/video/trailer.mp4",
+    "uploadDate": "2026-09-16",
+    "duration": "PT46S"
+  }
 }
 </script>
 <link rel="stylesheet" href="style.css">
@@ -177,16 +186,11 @@
 
   <section class="asoma" id="trailer">
     <h3 class="titulo"><span class="es">El tráiler</span><span class="en">The trailer</span></h3>
-    <!-- PROVISIONAL: cambiar el id del vídeo por el tráiler real cuando esté. -->
     <div class="marco video">
-      <iframe src="https://www.youtube-nocookie.com/embed/YE7VzlLtp-4?rel=0"
-              title="Cozy Tent" loading="lazy" allowfullscreen
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <video controls playsinline preload="none" poster="video/trailer-poster.jpg">
+        <source src="video/trailer.mp4" type="video/mp4">
+      </video>
     </div>
-    <p class="nota">
-      <span class="es">Vídeo de ejemplo mientras se prepara el tráiler del juego.</span>
-      <span class="en">Placeholder video while the game's trailer is being made.</span>
-    </p>
   </section>
 
 </div>

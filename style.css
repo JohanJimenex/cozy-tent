@@ -139,7 +139,7 @@ p{margin:12px 0}
   backdrop-filter:blur(3px);box-shadow:0 12px 34px #0006}
 .marco{border:26px solid transparent;border-image:var(--marco);background:var(--panel)}
 .video{padding:0;line-height:0}
-.video iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:4px}
+.video video{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:4px;background:#000}
 .nota{color:var(--tenue);font-size:14px;text-align:center;margin-top:12px}
 
 .rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;padding:0;list-style:none}
