@@ -215,6 +215,42 @@ p{margin:12px 0}
 }
 .tiendas.en-portada .chapa{background:#0b0907cc;backdrop-filter:blur(4px)}
 
+/* ---------------------------------------------------------------- tiendas y descarga */
+/* Una chapa con enlace se comporta como las demas; solo cambia que se puede pulsar. */
+a.chapa{text-decoration:none;color:inherit}
+.chapa.lista small{color:var(--ambar-claro)}
+.chapa.lista svg{fill:var(--ambar-claro)}
+/* La tienda que corresponde al aparato desde el que se entra se marca sola (tiendas.js). */
+.chapa.tuya{border-color:var(--ambar);box-shadow:0 0 0 1px #e9b25c33,0 10px 26px #0008}
+.chapa.tuya::before,.chapa.tuya::after{width:19px;height:19px;opacity:1}
+
+/* Boton principal: solo aparece si el aparato tiene una tienda donde ya esta el juego. */
+.descargar{display:block;width:max-content;max-width:100%;margin:26px auto 0;padding:15px 34px;
+  border:1px solid var(--ambar);background:#1a1109cc;backdrop-filter:blur(4px);
+  color:var(--ambar-claro);text-decoration:none;font-size:16.5px;letter-spacing:.6px;
+  transition:.3s}
+.descargar:hover{background:#241609;transform:translateY(-3px);
+  box-shadow:0 12px 30px #0009,0 0 26px #e9b25c33}
+.descargar b{font-weight:600}
+.descargar[hidden]{display:none}
+
+/* ---------------------------------------------------------------- mas de Jopam */
+.entradilla{max-width:640px;margin:-6px auto 28px;text-align:center;color:var(--suave);font-size:15.5px}
+.obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;
+  max-width:940px;margin:0 auto}
+.obra{display:flex;gap:15px;align-items:flex-start;background:#0b0907;border:1px solid #33271f;
+  padding:16px;transition:.3s}
+.obra:hover{border-color:#5a4535;transform:translateY(-3px);box-shadow:0 10px 26px #0008}
+.obra img{width:62px;height:62px;border-radius:13px;flex:none}
+.obra .letra{min-width:0}
+.obra h4{margin:0 0 5px;font-size:16px;font-weight:600}
+.obra p{margin:0 0 9px;color:var(--suave);font-size:14px;line-height:1.45}
+.obra .vinculos{display:flex;flex-wrap:wrap;gap:7px}
+.obra .vinculos a{font-size:12px;letter-spacing:.5px;text-transform:uppercase;
+  color:var(--tenue);text-decoration:none;border:1px solid #33271f;padding:4px 9px;transition:.25s}
+.obra .vinculos a:hover{color:var(--ambar-claro);border-color:var(--ambar)}
+@media(max-width:420px){.obra{padding:13px;gap:12px}.obra img{width:52px;height:52px}}
+
 /* ---------------------------------------------------------------- pie */
 footer{position:relative;z-index:3;margin-top:90px;padding:44px 22px 40px;border-top:1px solid #2b201a;
   background:linear-gradient(#0f0c0a00,#0b0908)}

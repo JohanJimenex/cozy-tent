@@ -59,6 +59,7 @@
       <li><a href="#galeria"><span class="es">Imágenes</span><span class="en">Screens</span></a></li>
       <li><a href="#trailer"><span class="es">Tráiler</span><span class="en">Trailer</span></a></li>
       <li><a href="#tiendas"><span class="es">Dónde jugar</span><span class="en">Where to play</span></a></li>
+      <li><a href="#mas"><span class="es">Más juegos</span><span class="en">More games</span></a></li>
     </ul>
   </nav>
   <div class="derecha">
@@ -86,12 +87,15 @@
         <img class="capa lema" src="img/logo/lema.png" alt="">
       </span>
     </h1>
-    <ul class="tiendas en-portada" id="tiendas">
-      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.9 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path d="M16.6 9.3 5.6 2.9 14.9 11z"/><path d="M16.6 14.7 14.9 13l-9.3 8.1z"/><path d="M20.2 10.6c.7.4 1 .9 1 1.4s-.3 1-1 1.4l-2.3 1.3-1.9-2.7 1.9-2.7z"/></svg><span class="texto"><small><span class="es">Pronto</span><span class="en">Soon</span></small><span class="nombre">Google Play</span></span></li>
-      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2 1.6-3 1.7-3-.9-1.4-2.4-1.5-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .7 1 1.5 2.1 2.5 2 1-.1 1.4-.6 2.6-.6s1.5.6 2.6.6c1.1 0 1.8-1 2.4-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.2-.8-2.2-3.1z"/><path d="M14.5 5.9c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.6-.8 2.5.9.1 1.8-.4 2.4-1.1z"/></svg><span class="texto"><small><span class="es">Pronto</span><span class="en">Soon</span></small><span class="nombre">App Store</span></span></li>
-      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-10 9.5l5.4 2.2a2.8 2.8 0 0 1 1.6-.5h.2l2.4-3.4v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.4v.2a2.8 2.8 0 0 1-5.6.2l-3.8-1.6A10 10 0 1 0 12 2z"/><path d="M15.4 7.2a2.5 2.5 0 1 0 0 5.1 2.5 2.5 0 0 0 0-5.1zm0 .9a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2z"/><path d="M8.2 17.9a2.1 2.1 0 0 0 2.6-2.9 2.1 2.1 0 0 0-2.6-1.1l1.2.5a1.6 1.6 0 1 1-1.2 2.9l-1.2-.5c.3.5.7.9 1.2 1.1z"/></svg><span class="texto"><small><span class="es">Pronto</span><span class="en">Soon</span></small><span class="nombre">Steam</span></span></li>
-      <li class="chapa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 6.4c-2.4 0-4.3 2.4-4.3 5.6s1.7 5.6 4 5.6c1.6 0 2.8-1 4.4-3.5l1.1-1.8 1.1 1.8c1.6 2.5 2.8 3.5 4.4 3.5 2.3 0 4-2.4 4-5.6s-1.9-5.6-4.3-5.6c-1.7 0-3 .9-4.6 3.3l-.6 1-.6-1C9.8 7.3 8.5 6.4 6.8 6.4zm0 2c.9 0 1.8.7 3 2.6l.6.9-.7 1.1c-1.2 1.8-2 2.5-2.9 2.5-1.1 0-2-1.4-2-3.5s.9-3.6 2-3.6zm10.4 0c1.1 0 2 1.5 2 3.6s-.9 3.5-2 3.5c-.9 0-1.7-.7-2.9-2.5l-.7-1.1.6-.9c1.2-1.9 2.1-2.6 3-2.6z"/></svg><span class="texto"><small><span class="es">Pronto</span><span class="en">Soon</span></small><span class="nombre">Meta Quest</span></span></li>
-    </ul>
+    <a class="descargar" id="descargar" href="https://play.google.com/store/apps/details?id=com.jopam.cozytent" target="_blank" rel="noopener" hidden>
+      <span class="es">Descargar <b data-sistema></b></span><span class="en">Get it <b data-sistema></b></span>
+    </a>
+    <div class="tiendas en-portada" id="tiendas" role="list">
+      <a class="chapa lista" data-tienda="google" href="https://play.google.com/store/apps/details?id=com.jopam.cozytent" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.9 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path d="M16.6 9.3 5.6 2.9 14.9 11z"/><path d="M16.6 14.7 14.9 13l-9.3 8.1z"/><path d="M20.2 10.6c.7.4 1 .9 1 1.4s-.3 1-1 1.4l-2.3 1.3-1.9-2.7 1.9-2.7z"/></svg><span class="texto"><small><span class="es">Disponible</span><span class="en">Available</span></small><span class="nombre">Google Play</span></span></a>
+      <span class="chapa" data-tienda="apple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2 1.6-3 1.7-3-.9-1.4-2.4-1.5-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .7 1 1.5 2.1 2.5 2 1-.1 1.4-.6 2.6-.6s1.5.6 2.6.6c1.1 0 1.8-1 2.4-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.2-.8-2.2-3.1z"/><path d="M14.5 5.9c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.6-.8 2.5.9.1 1.8-.4 2.4-1.1z"/></svg><span class="texto"><small><span class="es">Pronto</span><span class="en">Soon</span></small><span class="nombre">App Store</span></span></span>
+      <span class="chapa" data-tienda="steam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-10 9.5l5.4 2.2a2.8 2.8 0 0 1 1.6-.5h.2l2.4-3.4v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.4v.2a2.8 2.8 0 0 1-5.6.2l-3.8-1.6A10 10 0 1 0 12 2z"/><path d="M15.4 7.2a2.5 2.5 0 1 0 0 5.1 2.5 2.5 0 0 0 0-5.1zm0 .9a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2z"/><path d="M8.2 17.9a2.1 2.1 0 0 0 2.6-2.9 2.1 2.1 0 0 0-2.6-1.1l1.2.5a1.6 1.6 0 1 1-1.2 2.9l-1.2-.5c.3.5.7.9 1.2 1.1z"/></svg><span class="texto"><small><span class="es">Pronto</span><span class="en">Soon</span></small><span class="nombre">Steam</span></span></span>
+      <span class="chapa" data-tienda="meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 6.4c-2.4 0-4.3 2.4-4.3 5.6s1.7 5.6 4 5.6c1.6 0 2.8-1 4.4-3.5l1.1-1.8 1.1 1.8c1.6 2.5 2.8 3.5 4.4 3.5 2.3 0 4-2.4 4-5.6s-1.9-5.6-4.3-5.6c-1.7 0-3 .9-4.6 3.3l-.6 1-.6-1C9.8 7.3 8.5 6.4 6.8 6.4zm0 2c.9 0 1.8.7 3 2.6l.6.9-.7 1.1c-1.2 1.8-2 2.5-2.9 2.5-1.1 0-2-1.4-2-3.5s.9-3.6 2-3.6zm10.4 0c1.1 0 2 1.5 2 3.6s-.9 3.5-2 3.5c-.9 0-1.7-.7-2.9-2.5l-.7-1.1.6-.9c1.2-1.9 2.1-2.6 3-2.6z"/></svg><span class="texto"><small><span class="es">Pronto</span><span class="en">Soon</span></small><span class="nombre">Meta Quest</span></span></span>
+    </div>
   </div>
   <a class="bajar" href="#juego"><span class="es">Seguir</span><span class="en">Scroll</span> ↓</a>
 </div>
@@ -193,6 +197,62 @@
     </div>
   </section>
 
+
+  <section class="asoma" id="mas">
+    <h3 class="titulo"><span class="es">Más de Jopam Studio</span><span class="en">More from Jopam Studio</span></h3>
+    <p class="entradilla"><span class="es">Otros juegos y apps que he publicado antes de Cozy Tent.</span><span class="en">Other games and apps I released before Cozy Tent.</span></p>
+    <div class="obras">
+      <article class="obra">
+        <img src="img/jopam/app1.png" alt="" width="192" height="192" loading="lazy">
+        <div class="letra">
+          <h4>Nolan&#x27;s Galaxy</h4>
+          <p><span class="es">Arcade 2D en pixel art: un astronauta en misión espacial.</span><span class="en">A 2D pixel-art arcade game: an astronaut on a space mission.</span></p>
+          <div class="vinculos"><a href="https://play.google.com/store/apps/details?id=com.jopamstudio.nolansgalaxy" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/es/app/nolans-galaxy/id6503222887" target="_blank" rel="noopener">App Store</a><a href="https://johanjimenex.itch.io/nolans-galaxy" target="_blank" rel="noopener">itch.io</a></div>
+        </div>
+      </article>
+      <article class="obra">
+        <img src="img/jopam/app2.png" alt="" width="192" height="192" loading="lazy">
+        <div class="letra">
+          <h4>STOP — Juego de Palabras</h4>
+          <p><span class="es">Di palabras por tema y letra antes de que se acabe el tiempo.</span><span class="en">Name words by topic and letter before the clock runs out.</span></p>
+          <div class="vinculos"><a href="https://play.google.com/store/apps/details?id=com.jopamstudio.stopwordsgame" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/es/developer/johan-jimenez/id1503858642" target="_blank" rel="noopener">App Store</a></div>
+        </div>
+      </article>
+      <article class="obra">
+        <img src="img/jopam/app3.png" alt="" width="192" height="192" loading="lazy">
+        <div class="letra">
+          <h4>Super Charadas</h4>
+          <p><span class="es">Charadas para jugar en grupo: adivina la palabra de la pantalla.</span><span class="en">Charades for a group: guess the word on the screen.</span></p>
+          <div class="vinculos"><a href="https://play.google.com/store/apps/details?id=com.ManguGames.SuperCharadas" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/super-charadas-guessup/id1503858643" target="_blank" rel="noopener">App Store</a></div>
+        </div>
+      </article>
+      <article class="obra">
+        <img src="img/jopam/app4.png" alt="" width="192" height="192" loading="lazy">
+        <div class="letra">
+          <h4>Dominó Apunte y Anota</h4>
+          <p><span class="es">Lleva los puntos de la partida de dominó sin líos.</span><span class="en">Keep score in a game of dominoes without the mess.</span></p>
+          <div class="vinculos"><a href="https://play.google.com/store/apps/details?id=com.JopamStudios.DominoApunteYAnota" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/domino-apunte-y-anota/id6742063485" target="_blank" rel="noopener">App Store</a></div>
+        </div>
+      </article>
+      <article class="obra">
+        <img src="img/jopam/app5.png" alt="" width="192" height="192" loading="lazy">
+        <div class="letra">
+          <h4>Info Movies</h4>
+          <p><span class="es">Busca películas y mira el tráiler, la puntuación y el reparto.</span><span class="en">Look up films and see the trailer, the rating and the cast.</span></p>
+          <div class="vinculos"><a href="https://apps.apple.com/us/app/info-movies/id6476113841" target="_blank" rel="noopener">App Store</a></div>
+        </div>
+      </article>
+      <article class="obra">
+        <img src="img/jopam/app6.png" alt="" width="192" height="192" loading="lazy">
+        <div class="letra">
+          <h4>Calculadora de Préstamos</h4>
+          <p><span class="es">Calcula las cuotas y la tabla de amortización de un préstamo.</span><span class="en">Work out loan instalments and the amortisation table.</span></p>
+          <div class="vinculos"><a href="https://play.google.com/store/apps/details?id=com.mangugames.calculadoraprestamo" target="_blank" rel="noopener">Google Play</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
 </div>
 
 <footer>
@@ -205,11 +265,12 @@
     </div>
   </div>
   <p class="legal">© 2026 Jopam Studio ·
-    <span class="es">Cozy Tent está en desarrollo; lo que ves puede cambiar.</span>
-    <span class="en">Cozy Tent is in development; what you see may change.</span>
+    <span class="es">Cozy Tent ya está en Google Play. Las demás versiones siguen en desarrollo.</span>
+    <span class="en">Cozy Tent is out on Google Play. The other versions are still in development.</span>
   </p>
 </footer>
 
 <script src="idioma.js"></script>
+<script src="tiendas.js"></script>
 </body>
 </html>
