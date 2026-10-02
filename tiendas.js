@@ -6,9 +6,9 @@
   // Cada tienda con su dirección. Sin dirección = todavía no está publicado ahí.
   const TIENDAS = {
     google: "https://play.google.com/store/apps/details?id=com.jopam.cozytent",
-    apple: null,
-    steam: null,
-    meta: null,
+    apple: "https://apps.apple.com/do/app/cozy-tent/id6815219759",
+    steam: "https://store.steampowered.com/app/5371810/cozy_tent/",
+    meta: "https://www.meta.com/experiences/cozy-tent/1246203311919256/",
   };
 
   // Nombre que se enseña en el botón, no el de la tienda: "Descargar para Android".
