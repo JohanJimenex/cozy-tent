@@ -19,6 +19,12 @@
     meta: { es: "para Meta Quest", en: "for Meta Quest" },
   };
 
+  // En Steam el juego aún no ha salido: hay demo y lista de deseos. El botón lo dice
+  // entero en vez de "Descargar en Steam". Quitar esta entrada el día del lanzamiento.
+  const FRASE = {
+    steam: { es: "Probar la demo en Steam", en: "Try the free demo on Steam" },
+  };
+
   function cual() {
     const ua = navigator.userAgent || "";
     // El Quest se identifica como Android: va antes para no mandarlo a Google Play.
@@ -46,7 +52,9 @@
   if (!boton) return;
   boton.href = url;
   boton.querySelectorAll("[data-sistema]").forEach(b => {
-    b.textContent = NOMBRE[tienda][b.closest(".en") ? "en" : "es"];
+    const idioma = b.closest(".en") ? "en" : "es";
+    if (FRASE[tienda]) b.parentElement.textContent = FRASE[tienda][idioma];
+    else b.textContent = NOMBRE[tienda][idioma];
   });
   boton.hidden = false;
 })();
