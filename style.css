@@ -289,3 +289,16 @@ body[data-idioma="es"] li.es,body[data-idioma="en"] li.en{display:list-item}
   .fugaz{opacity:0}
   .asoma{opacity:1;transform:none;transition:none}
 }
+
+/* ---------------------------------------------------------------- aviso de cookies */
+.aviso-cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:30;max-width:560px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:12px;
+  background:#1c1410f2;border:1px solid #6b503c;box-shadow:0 8px 30px #000a;backdrop-filter:blur(8px)}
+.aviso-cookies p{margin:0;font-size:14.5px;line-height:1.5;color:var(--suave)}
+.aviso-cookies .botones{display:flex;gap:8px;flex:none}
+.aviso-cookies button{font:600 13px/1 Literata,serif;letter-spacing:.4px;padding:10px 14px;border-radius:8px;
+  cursor:pointer;color:var(--papel);background:transparent;border:1px solid #6b503c;transition:border-color .25s,color .25s}
+.aviso-cookies button:hover{border-color:var(--ambar)}
+.aviso-cookies button.si{color:var(--noche);background:var(--ambar);border-color:var(--ambar)}
+@media (max-width:520px){.aviso-cookies{flex-direction:column;align-items:stretch;text-align:center}
+  .aviso-cookies .botones{justify-content:center}}
