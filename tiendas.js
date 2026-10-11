@@ -7,7 +7,7 @@
   const TIENDAS = {
     google: "https://play.google.com/store/apps/details?id=com.jopam.cozytent",
     apple: "https://apps.apple.com/do/app/cozy-tent/id6815219759",
-    steam: "https://store.steampowered.com/app/5371810/cozy_tent/",
+    steam: "https://store.steampowered.com/app/5371810/cozy_tent/?utm_source=web&utm_medium=boton",
     meta: "https://www.meta.com/experiences/cozy-tent/1246203311919256/",
   };
 
